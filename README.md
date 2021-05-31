@@ -34,6 +34,51 @@ Default output format [None]:
 ```
 - If you don't have `awscli` installed, see [aws documentation](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html) for installation guides.
 
+----
+##### 4). Create your cluster
+
+- On `PowerSell`, enter the command below to create your cluster named `apple-cluster`,
+```bash
+eksctl create cluster \
+--name apple-cluster \
+--version 1.16 \
+--region us-west-2 \
+--nodegroup-name linux-nodes \
+--node-type t3.large \
+--nodes 2
+```
+- Ether `aws eks --region us-west-2 describe-cluster --name apple-cluster --query cluster.status` to check cluster status. If successfully created, you should see `"ALIVE"`
+- Enter `aws eks --region us-west-2 update-kubeconfig --name apple-cluster` to update and export kubernetes configuration file to your local.
+- `$ cat ~/.kube/config` to see kubernetes configuration file. You shold see something like this. 
+```bash
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: CERT
+    server: https://xxxxxxx.sk1.us-east-1.eks.amazonaws.com
+  name: arn:aws:eks:us-east-1:xxxxxxx:cluster/eks-cluster
+contexts:
+- context:
+    cluster: arn:aws:eks:us-east-1:xxxxxxx:cluster/eks-cluster
+    user: arn:aws:eks:us-east-1:xxxxxxx:cluster/eks-cluster
+  name: arn:aws:eks:us-east-1:xxxxxxx:cluster/eks-cluster
+current-context: arn:aws:eks:us-east-1:xxxxxxx:cluster/eks-cluster
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:us-east-1:xxxxxxx:cluster/eks-cluster
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - --region
+      - us-east-1
+      - eks
+      - get-token
+      - --cluster-name
+      - eks-cluster
+      command: aws
+```
 
 
 
