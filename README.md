@@ -4,7 +4,10 @@
 see [aws documentation](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html) for guide.
 
 - If using Windows OS open `PowerShell` as Administrator,
-- Enter `curl -o kubectl.exe https://amazon-eks.s3.us-west-2.amazonaws.com/1.20.4/2021-04-12/bin/windows/amd64/kubectl.exe` to download kubectl binaries
+- To download kubectl binaries, enter 
+```bash
+curl -o kubectl.exe https://amazon-eks.s3.us-west-2.amazonaws.com/1.20.4/2021-04-12/bin/windows/amd64/kubectl.exe
+```
 
 
 
