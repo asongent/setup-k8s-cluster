@@ -1,6 +1,6 @@
 # This project is to build-eks-cluster from CLI
 
-<details><summary>##### 1). Install kubectl on your system</summary>
+<details><summary>1). Install kubectl on your system</summary>
 <p> 
 See [aws documentation](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html) for guide.
 
@@ -19,15 +19,21 @@ curl -o kubectl.exe https://amazon-eks.s3.us-west-2.amazonaws.com/1.20.4/2021-04
 
 ----
 
-##### 2). Install eksctl on your system
+<details><summary>2). Install eksctl on your system</summary>
+<p>
 
 If you are using Windows OS, cick [here](https://github.com/weaveworks/eksctl/releases/download/0.51.0/eksctl_Windows_amd64.zip) to download the zip file or see [aws documentation](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html) for installation guide.
 
 - a). Follow configuration steps( a to d) above to set up eksctl. Remember,you will have to create a folder with different name other than `bin` if they have to be in the same location or directory.
 - b) Enter `eksctl version` to see its current version
 
+</p>
+</details>
 ---
-##### 3). Configure aws Credentials
+
+
+<details><summary>3). Configure aws Credentials</summary>
+<p>
 - Open `command prompt` or and enter `aws configure` and the enter your `AWS Access Key ID`, `AWS Secret Access Key `, `Default region name [us-east-1]`, etc
 
  ```bash
@@ -38,8 +44,12 @@ Default output format [None]:
 ```
 - If you don't have `awscli` installed, see [aws documentation](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html) for installation guides.
 
+</p>
+</details>
 ----
-##### 4). Create your cluster
+ 
+<details><summary>4). Create your cluster</summary>
+<p>
 
 - On `PowerSell`, enter the command below to create your cluster named `apple-cluster`,
 ```bash
@@ -104,13 +114,21 @@ kubectl get apiservices
 ```bash
 kubectl get svc
 ```
+
+</p>
+</details>
 ----
-##### 6). Clean up
+
+<details><summary>5). Clean up
 - Enter `$ eksctl delete cluster --region=us-west-2 --name=apple-cluster` to delete your cluster
 
-#### 7). Comming up next
+<details><summary>6). Comming up next </summary>
+<p>
 
 - Helm 
+
+</p>
+</details>
 
 
 
