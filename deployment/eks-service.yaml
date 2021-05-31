@@ -1,11 +1,17 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: webapp-service
+  creationTimestamp: null
+  labels:
+    app: eks-test
+  name: eks-service
 spec:
-  selector:
-    app: webapp
   ports:
-    - protocol: TCP
-      port: 300
-      targetPort: 80
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: eks-test
+  type: LoadBalancer
+status:
+  loadBalancer: {}

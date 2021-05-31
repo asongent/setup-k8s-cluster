@@ -1,21 +1,26 @@
-ind: Deployment
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: webapp
-  name: webapp
+    app: eks-test
+  name: eks-test
 spec:
-  replicas: 9
+  replicas: 5
   selector:
     matchLabels:
-      app: webapp
+      app: eks-test
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: webapp
+        app: eks-test
     spec:
       containers:
-      - image: nginx
-        name: dockerapp
+      - image: eproject/web
+        name: web
+        ports:
+        - containerPort: 200
+        resources: {}
+status: {}
