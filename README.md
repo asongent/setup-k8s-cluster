@@ -1,6 +1,7 @@
 # This project is to build-eks-cluster from CLI
 
-##### 1). Install kubectl on your system 
+<details><summary>##### 1). Install kubectl on your system</summary>
+<p> 
 See [aws documentation](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html) for guide.
 
 - If using Windows OS open `PowerShell` as Administrator, enter the url below to download kubectl binaries.
@@ -13,7 +14,10 @@ curl -o kubectl.exe https://amazon-eks.s3.us-west-2.amazonaws.com/1.20.4/2021-04
 - d). Add the Path of the `bin` folder to your environment variable (under `User variable for <user-name>`)
 - e). Enter `kubectl version --short --client` to test kubectl version.
 
----
+</p>
+</details>
+
+----
 
 ##### 2). Install eksctl on your system
 
