@@ -1,0 +1,21 @@
+ind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: webapp
+  name: webapp
+spec:
+  replicas: 9
+  selector:
+    matchLabels:
+      app: webapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - image: nginx
+        name: dockerapp
