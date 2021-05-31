@@ -114,8 +114,13 @@ kubectl get svc
 </p>
 </details>
 
-<details><summary>5). Clean up
+<details><summary>5). Clean up </summary>
+<p>
+
 - Enter `$ eksctl delete cluster --region=us-west-2 --name=apple-cluster` to delete your cluster
+
+</p>
+</details>
 
 <details><summary>6). Comming up next </summary>
 <p>
