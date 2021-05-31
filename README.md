@@ -30,6 +30,7 @@ If you are using Windows OS, cick [here](https://github.com/weaveworks/eksctl/re
 
 <details><summary>3). Configure aws Credentials</summary>
 <p>
+
 - Open `command prompt` or and enter `aws configure` and the enter your `AWS Access Key ID`, `AWS Secret Access Key `, `Default region name [us-east-1]`, etc
 
  ```bash
