@@ -23,7 +23,7 @@ If you are using Windows OS, cick [here](https://github.com/weaveworks/eksctl/re
 - b) Enter `eksctl version` to see its current version
 
 ---
-##### 1) Configure aws Credentials
+##### 3). Configure aws Credentials
 - Open `command prompt` or and enter `aws configure` and the enter your `AWS Access Key ID`, `AWS Secret Access Key `, `Default region name [us-east-1]`, etc
 
  ```bash
@@ -80,7 +80,7 @@ users:
       command: aws
 ```
 
-- Now that your cluster is up and running, move to directory where your `"YAML defination"` are located and start creating your appliactions.
+- Now that your cluster is up and running, move to directory where your `"YAML defination file"` are located and start creating your appliactions.
 
 ```bash
 kubectl get ns
@@ -100,6 +100,9 @@ kubectl get apiservices
 ```bash
 kubectl get svc
 ```
+----
+##### 6). Clean up
+- Enter `$ eksctl delete cluster --region=us-west-2 --name=apple-cluster` to delete your cluster
 
 
 
