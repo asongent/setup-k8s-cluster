@@ -2,6 +2,7 @@
 ---
 <details><summary>1). Install kubectl on your system</summary>
 <p> 
+
 See [aws documentation](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html) for guide.
 
 - If using Windows OS open `PowerShell` as Administrator, enter the url below to download kubectl binaries.
