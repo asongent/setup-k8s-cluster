@@ -1,5 +1,5 @@
 # This project is to build-eks-cluster from CLI
-
+---
 <details><summary>1). Install kubectl on your system</summary>
 <p> 
 See [aws documentation](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html) for guide.
@@ -17,8 +17,6 @@ curl -o kubectl.exe https://amazon-eks.s3.us-west-2.amazonaws.com/1.20.4/2021-04
 </p>
 </details>
 
-----
-
 <details><summary>2). Install eksctl on your system</summary>
 <p>
 
@@ -29,8 +27,6 @@ If you are using Windows OS, cick [here](https://github.com/weaveworks/eksctl/re
 
 </p>
 </details>
----
-
 
 <details><summary>3). Configure aws Credentials</summary>
 <p>
@@ -46,8 +42,7 @@ Default output format [None]:
 
 </p>
 </details>
-----
- 
+
 <details><summary>4). Create your cluster</summary>
 <p>
 
@@ -117,7 +112,6 @@ kubectl get svc
 
 </p>
 </details>
-----
 
 <details><summary>5). Clean up
 - Enter `$ eksctl delete cluster --region=us-west-2 --name=apple-cluster` to delete your cluster
