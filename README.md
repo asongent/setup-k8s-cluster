@@ -19,7 +19,7 @@ curl -o kubectl.exe https://amazon-eks.s3.us-west-2.amazonaws.com/1.20.4/2021-04
 <details><summary>2). Install eksctl on your system</summary>
 <p>
 
-- a). If you are using Windows OS, cick [here](https://github.com/weaveworks/eksctl/releases/download/0.51.0/eksctl_Windows_amd64.zip) to download the zip file or see [aws documentation](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html) for installation guide.
+- a). If you are using `Windows OS`, cick [here](https://github.com/weaveworks/eksctl/releases/download/0.51.0/eksctl_Windows_amd64.zip) to download the zip file or see [aws documentation](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html) for installation guide.
 
 - b). Follow configuration steps( a to d) above to set up eksctl. Remember,you will have to create a folder with different name other than `bin` if they have to be in the same location or directory.
 - c). Enter `eksctl version` to see its current version
