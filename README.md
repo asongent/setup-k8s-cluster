@@ -56,7 +56,7 @@ eksctl create cluster \
 --node-type t3.large \
 --nodes 2
 ```
-- Ether `aws eks --region us-west-2 describe-cluster --name apple-cluster --query cluster.status` to check the status of the cluster. If successfully created, you should see `"ALIVE"`
+- Enter `aws eks --region us-west-2 describe-cluster --name apple-cluster --query cluster.status` to check the status of the cluster. If successfully created, you should see `"ALIVE"`
 - Enter `aws eks --region us-west-2 update-kubeconfig --name apple-cluster` to update and export kubernetes configuration file to your local.
 - `$ cat ~/.kube/config` to see kubernetes configuration file. You shold see something like this. 
 ```bash
@@ -89,7 +89,7 @@ users:
       command: aws
 ```
 
-- Now that your cluster is up and running, move to directory where your `"YAML defination file"` are located and start creating your appliactions.
+- Now that your cluster is up and running, move to directory where your `"YAML defination files"` are located and start creating your appliactions.
 
 ```bash
 kubectl get ns
