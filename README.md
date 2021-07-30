@@ -113,7 +113,63 @@ kubectl get svc
 </p>
 </details>
 
-<details><summary>5). Clean up </summary>
+<details><summary>5). To create an IAM OIDC identity provider for your cluster with eksctl</summary>
+<p>
+ 
+ - Determine whether you have an existing IAM OIDC provider for your cluster.
+
+View your cluster's OIDC provider URL.
+
+ ```bash
+ aws eks describe-cluster --name <cluster_name> --query "cluster.identity.oidc.issuer" --output text
+ ```
+ Example output:
+
+```bash
+https://oidc.eks.us-west-2.amazonaws.com/id/EXAMPLED539D4633E53DE1B716D3041E
+```
+- List the IAM OIDC providers in your account. Replace <EXAMPLED539D4633E53DE1B716D3041E> (including <>) with the value returned from the previous command.
+
+ ```bash
+ aws iam list-open-id-connect-providers | grep <EXAMPLED539D4633E53DE1B716D3041E>
+ ```
+
+ Example output:
+
+ ```bash
+ "Arn": "arn:aws-cn:iam::111122223333:oidc-provider/oidc.eks.us-west-2.amazonaws.com/id/EXAMPLED539D4633E53DE1B716D3041E"
+ ```
+
+ If output is returned from the previous command, then you already have a provider for your cluster. If no output is returned, then you must create an IAM OIDC provider.
+
+- Create an IAM OIDC identity provider for your cluster with the following command. Replace <cluster_name> (including <>) with your own value.
+
+```bash
+eksctl utils associate-iam-oidc-provider --cluster <cluster_name> --approve
+```
+**To create an IAM OIDC identity provider for your cluster with the AWS Management Console**
+
+- Open the Amazon EKS console (here)[https://console.aws.amazon.com/eks/home#/clusters].
+
+- Select the name of your cluster and then select the `**Configuration**` tab.
+
+- In the **Details** section, note the value of the **OpenID Connect provider URL**.
+
+- Open the IAM console (here)[https://console.aws.amazon.com/iam/].
+
+- In the navigation panel, choose Identity Providers. If a Provider is listed that matches the URL for your cluster, then you already have a provider for your cluster. If a provider isn't listed that matches the URL for your cluster, then you must create one.
+
+- To create a provider, choose **Add Provider**.
+
+- For **Provider Type**, **choose OpenID Connect**.
+
+- For **Provider URL**, paste the OIDC issuer URL for your cluster, and then choose **Get thumbprint**.
+
+- For **Audience**, enter `sts.amazonaws.com` and choose **Add provider**.
+</p>
+</details>
+
+<details><summary>6). Clean up </summary>
 <p>
 
 - Enter `$ eksctl delete cluster --region=us-west-2 --name=apple-cluster` to delete your cluster
@@ -121,13 +177,14 @@ kubectl get svc
 </p>
 </details>
 
-<details><summary>6). Comming up next </summary>
+<details><summary>7). Comming up next </summary>
 <p>
 
 - Helm 
 
 </p>
 </details>
+
 
 
 
