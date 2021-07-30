@@ -38,7 +38,7 @@ curl -o kubectl.exe https://amazon-eks.s3.us-west-2.amazonaws.com/1.20.4/2021-04
 Default region name [us-east-1]: us-west-1
 Default output format [None]: 
 ```
-- If you don't have `awscli` installed, see [aws documentation](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html) for installation guides.
+- If you don't have `awscli` installed, see (aws documentation)[https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html] for installation guides.
 
 </p>
 </details>
