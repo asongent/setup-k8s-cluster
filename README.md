@@ -121,7 +121,7 @@ kubectl get svc
 View your cluster's OIDC provider URL.
 
  ```bash
- aws eks describe-cluster --name <cluster_name> --query "cluster.identity.oidc.issuer" --output text
+ aws eks --region us-west-2 describe-cluster --name <cluster_name> --query "cluster.identity.oidc.issuer" --output text
  ```
  Example output:
 
@@ -145,7 +145,7 @@ https://oidc.eks.us-west-2.amazonaws.com/id/EXAMPLED539D4633E53DE1B716D3041E
 - Create an IAM OIDC identity provider for your cluster with the following command. Replace <cluster_name> (including <>) with your own value.
 
 ```bash
-eksctl utils associate-iam-oidc-provider --cluster <cluster_name> --approve
+eksctl --region us-west-2 utils associate-iam-oidc-provider --cluster apple-cluster --approve
 ```
 **To create an IAM OIDC identity provider for your cluster with the AWS Management Console**
 
