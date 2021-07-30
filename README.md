@@ -151,7 +151,7 @@ eksctl utils associate-iam-oidc-provider --cluster <cluster_name> --approve
 
 - Open the Amazon EKS console (here)[https://console.aws.amazon.com/eks/home#/clusters].
 
-- Select the name of your cluster and then select the `**Configuration**` tab.
+- Select the name of your cluster and then select the **Configuration** tab.
 
 - In the **Details** section, note the value of the **OpenID Connect provider URL**.
 
