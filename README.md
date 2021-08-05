@@ -50,7 +50,7 @@ Default output format [None]:
 ```bash
 eksctl create cluster \
 --name apple-cluster \
---version 1.16 \
+--version 1.17 \
 --region us-west-2 \
 --nodegroup-name linux-nodes \
 --node-type t3.large \
