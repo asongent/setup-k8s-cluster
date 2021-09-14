@@ -2,6 +2,7 @@
 #### Set-up k8s cluster with KOPS
 
 **Step 1**: Create Ubuntu EC2 instance
+
 **Step 2**: install AWSCLI 
 
 ```bash
