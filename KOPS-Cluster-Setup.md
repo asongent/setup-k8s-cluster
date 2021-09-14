@@ -1,5 +1,5 @@
 
-## Set-up k8s cluster with KOPS
+# Set-up k8s Cluster With KOPS
 
 **Step 1**: Create Ubuntu EC2 instance
 
