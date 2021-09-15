@@ -84,6 +84,10 @@ kops edit ig --name=<cluster_name> master-<zone_name>
 ```bash
  kops validate cluster
 ```
+**Step 12**: Clean up
 
+```bash
+kops delete cluster <cluster_name> --yes
+```
 
 
