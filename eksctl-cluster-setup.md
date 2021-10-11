@@ -38,7 +38,7 @@ curl -o kubectl.exe https://amazon-eks.s3.us-west-2.amazonaws.com/1.20.4/2021-04
 Default region name [us-east-1]: us-west-1
 Default output format [None]: 
 ```
-- If you don't have `awscli` installed, see [aws documentation](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html) for installation guides.
+- If you don't have `awscli` installed, see (aws documentation)[https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html] for installation guides.
 
 </p>
 </details>
@@ -50,7 +50,7 @@ Default output format [None]:
 ```bash
 eksctl create cluster \
 --name apple-cluster \
---version 1.16 \
+--version 1.17 \
 --region us-west-2 \
 --nodegroup-name linux-nodes \
 --node-type t3.large \
