@@ -56,6 +56,18 @@ eksctl create cluster \
 --node-type t3.large \
 --nodes 2
 ```
+- A cluster will fail if desired compute resources(`instance type`) are not available in default AZ. Most often, you will receive message with reasons why cluster creation failed in default AZ. In this case you can specify AZ where your desired compute resources are available.  
+ 
+ ```bash
+ 
+eksctl create cluster \
+--name prod-cluster \
+--version 1.21 \
+--zones us-west-2a,us-west-2b,us-west-2c \
+--nodegroup-name linux-nodes \
+--node-type c4.4xlarge \
+--nodes 2
+ ```
 - Enter `aws eks --region us-west-2 describe-cluster --name apple-cluster --query cluster.status` to check the status of the cluster. If successfully created, you should see `"ALIVE"`
 - Enter `aws eks --region us-west-2 update-kubeconfig --name apple-cluster` to update and export kubernetes configuration file to your local.
 - `$ cat ~/.kube/config` to see kubernetes configuration file. You shold see something like this. 
