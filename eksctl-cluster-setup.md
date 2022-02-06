@@ -228,7 +228,9 @@ prometheus      monitoring      2               2022-02-05 17:36:43.3369651 -050
 ```
 
 **Create empty helm Chart**
- You can creaate an empty helm chart then modify with your own docker images and configurations
+
+ You can crete an empty helm chart then modify with your own docker images and configurations
+
 ```bash
 helm create my-chart
 ```
@@ -251,7 +253,7 @@ To install local chart, run;
 
 ```bash
 helm install prometheus ./prometheus -n monitoring 
-```
+``
 
 </p>
 </details>
