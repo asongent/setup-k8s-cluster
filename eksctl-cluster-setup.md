@@ -189,10 +189,69 @@ eksctl --region us-west-2 utils associate-iam-oidc-provider --cluster apple-clus
 </p>
 </details>
 
-<details><summary>7). Comming up next </summary>
+<details><summary>7). Helm </summary>
 <p>
 
-- Helm 
+**Install app in a kubernetes using helm**
+
+- helm install <app_name> <repo_name>/<chart_name>. This will install an application to your kubernetes cluster
+
+for example, installing prometheus will look like this
+
+```bash
+helm install prometheus prometheus/kube-prometheus-stack
+```
+- To specify `namespace`, run:
+
+```bash
+helm install prometheus prometheus/kube-prometheus-stack --namespace monitoring
+```
+**Upgrade installed application**
+
+```bash
+helm upgrade prometheus prometheus/kube-prometheus-stack # This will apply changes that have been made 
+```
+Note!
+namespace `monitoring` must exist
+
+**List all helm releases and revisions in the cluster**
+To list all helm releases  in the cluater, run
+```bash
+helm ls -A 
+```
+
+You should have something like this
+
+```bash
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                           APP VERSION
+prometheus      monitoring      2               2022-02-05 17:36:43.3369651 -0500 EST   deployed        kube-prometheus-stack-31.0.0    0.53.1
+```
+
+**Create empty helm Chart**
+ You can creaate an empty helm chart then modify with your own docker images and configurations
+```bash
+helm create my-chart
+```
+
+**Generate Chart from local repo**
+
+- A helm chart can be pull from local repository. Here, you can make modifications on `values.yaml` file before installing the application or upgrade already existing applicaton.
+
+```bash
+helm pull prometheus/kube-prometheus-stack --untar=true
+```
+This will generate `kube-prometheus-stack` with `template`, `values.yaml` etc. You may rename the chart(`kube-prometheus-stack`) by running,
+
+```bash
+mv kube-prometheus-stack prometheus # This will rename kube-prometheus-stack folder to prometheus
+```
+**Install local chart**
+
+To install local chart, run;
+
+```bash
+helm install prometheus ./prometheus -n monitoring 
+```
 
 </p>
 </details>
