@@ -214,7 +214,7 @@ helm repo ls
 **2. Install app in a kubernetes using helm**
 
 ```bash
-helm install `<app_name>` `<repo_name>`/`<chart_name>` # This will install an application to your kubernetes cluster
+helm install <app_name> <repo_name>/<chart_name> # This will install an application to your kubernetes cluster
 ```
 
 for example, installing prometheus will look like this
@@ -240,17 +240,16 @@ Note
 
 **3. List all helm releases and revisions in the cluster**
 
-To list all helm releases and revisions in the cluater, run
+- To list all helm releases and revisions in the cluater, run
 
 ```bash
 helm ls -A 
 ```
-
-You should have something like this
+  - You should have something like this
 
 ```bash
 NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                           APP VERSION
-prometheus      monitoring      1              2022-02-05 17:36:43.3369651 -0500 EST   deployed        kube-prometheus-stack-31.0.0    0.53.1
+prometheus      monitoring      2               2022-02-05 17:36:43.3369651 -0500 EST   deployed        kube-prometheus-stack-31.0.0    0.53.1
 ```
 
 **4. Generate Chart from local repo**
@@ -260,14 +259,14 @@ prometheus      monitoring      1              2022-02-05 17:36:43.3369651 -0500
 ```bash
 helm pull prometheus/kube-prometheus-stack --untar=true
 ```
-This will generate `kube-prometheus-stack` with `template`, `values.yaml` etc. You may rename the chart(`kube-prometheus-stack`) by running,
+- This will generate `kube-prometheus-stack` with `template`, `values.yaml` etc. You may rename the chart(`kube-prometheus-stack`) by running,
 
 ```bash
 mv kube-prometheus-stack prometheus # This will rename kube-prometheus-stack folder to prometheus
 ```
 **6. Install local chart**
 
-To install local chart, run;
+- To install local chart, run;
 
 ```bash
 helm install prometheus ./prometheus -n monitoring 
@@ -293,7 +292,7 @@ helm template prometheus ./prometheus/ --values=./prometheus/values.yaml > path/
 
 **8. Create empty helm Chart**
 
- You can crete an empty helm chart then modify with your own docker images and configurations
+- You can create an empty helm chart then modify with your own docker images and configurations
 
 ```bash
 helm create my-chart
