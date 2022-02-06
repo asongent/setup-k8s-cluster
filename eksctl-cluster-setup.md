@@ -211,9 +211,10 @@ helm install prometheus prometheus/kube-prometheus-stack --namespace monitoring
 ```bash
 helm upgrade prometheus prometheus/kube-prometheus-stack # This will apply changes that have been made 
 ```
-Note!!!
+Note
 
 > namespace `monitoring` must exist
+> If you don't have it created already, run `kubectl create ns monitoring`
 
 **List all helm releases and revisions in the cluster**
 To list all helm releases  in the cluater, run
