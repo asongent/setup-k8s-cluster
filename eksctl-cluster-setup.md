@@ -209,7 +209,7 @@ helm repo update
 
 ```bash
 helm repo ls
-``
+```
 
 **2. Install app in a kubernetes using helm**
 
@@ -289,7 +289,8 @@ Eg
 ```bash
 helm template prometheus ./prometheus/ --values=./prometheus/values.yaml > path/prometheus.yaml 
 ```  
- 
+
+
 **8. Create empty helm Chart**
 
  You can crete an empty helm chart then modify with your own docker images and configurations
@@ -297,7 +298,6 @@ helm template prometheus ./prometheus/ --values=./prometheus/values.yaml > path/
 ```bash
 helm create my-chart
 ```
-
 </p>
 </details>
 
