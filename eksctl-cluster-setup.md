@@ -240,7 +240,7 @@ Note
 
 **3. List all helm releases and revisions in the cluster**
 
-To list all helm releases  in the cluater, run
+To list all helm releases and revisions in the cluater, run
 
 ```bash
 helm ls -A 
@@ -250,7 +250,7 @@ You should have something like this
 
 ```bash
 NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                           APP VERSION
-prometheus      monitoring      2               2022-02-05 17:36:43.3369651 -0500 EST   deployed        kube-prometheus-stack-31.0.0    0.53.1
+prometheus      monitoring      1              2022-02-05 17:36:43.3369651 -0500 EST   deployed        kube-prometheus-stack-31.0.0    0.53.1
 ```
 
 **4. Generate Chart from local repo**
