@@ -192,9 +192,28 @@ eksctl --region us-west-2 utils associate-iam-oidc-provider --cluster apple-clus
 <details><summary>7). Helm </summary>
 <p>
 
+ **This Tutorial Assumes that you already have helm installed on you OS**
+
+**Add chart to local helm repository**
+
+```bash
+helm repo add prometheus https://prometheus-community.github.io/helm-charts
+```
+**To update local repositories**
+
+```bash
+helm repo update
+```
+
+**List Local repo**
+
+```bash
+helm repo ls
+``
+
 **Install app in a kubernetes using helm**
 
-- helm install <app_name> <repo_name>/<chart_name>. This will install an application to your kubernetes cluster
+- helm install `<app_name>` `<repo_name>`/`<chart_name>`. This will install an application to your kubernetes cluster
 
 for example, installing prometheus will look like this
 
@@ -214,11 +233,13 @@ helm upgrade prometheus prometheus/kube-prometheus-stack # This will apply chang
 Note
 
 > namespace `monitoring` must exist.
- 
+
 > If you don't have it created already, run `kubectl create ns monitoring`
 
 **List all helm releases and revisions in the cluster**
+
 To list all helm releases  in the cluater, run
+
 ```bash
 helm ls -A 
 ```
@@ -257,6 +278,7 @@ To install local chart, run;
 ```bash
 helm install prometheus ./prometheus -n monitoring 
 ```
+
 </p>
 </details>
 
