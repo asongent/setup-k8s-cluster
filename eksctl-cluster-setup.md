@@ -209,7 +209,7 @@ helm repo update
 
 ```bash
 helm repo ls
-``
+```
 
 **Install app in a kubernetes using helm**
 
