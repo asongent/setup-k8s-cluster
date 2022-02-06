@@ -191,29 +191,31 @@ eksctl --region us-west-2 utils associate-iam-oidc-provider --cluster apple-clus
 
 <details><summary>7). Helm </summary>
 <p>
+**This Tutorial Assumes that you already have helm installed on you OS**
 
- **This Tutorial Assumes that you already have helm installed on you OS**
 
-**Add chart to local helm repository**
+**1. Add chart to local helm repository**
 
 ```bash
 helm repo add prometheus https://prometheus-community.github.io/helm-charts
 ```
-**To update local repositories**
+- To update local repositories
 
 ```bash
 helm repo update
 ```
 
-**List Local repo**
+- List Local repo
 
 ```bash
 helm repo ls
+``
+
+**2. Install app in a kubernetes using helm**
+
+```bash
+helm install `<app_name>` `<repo_name>`/`<chart_name>` # This will install an application to your kubernetes cluster
 ```
-
-**Install app in a kubernetes using helm**
-
-- helm install `<app_name>` `<repo_name>`/`<chart_name>`. This will install an application to your kubernetes cluster
 
 for example, installing prometheus will look like this
 
@@ -236,7 +238,7 @@ Note
 
 > If you don't have it created already, run `kubectl create ns monitoring`
 
-**List all helm releases and revisions in the cluster**
+**3. List all helm releases and revisions in the cluster**
 
 To list all helm releases  in the cluater, run
 
@@ -251,15 +253,7 @@ NAME            NAMESPACE       REVISION        UPDATED                         
 prometheus      monitoring      2               2022-02-05 17:36:43.3369651 -0500 EST   deployed        kube-prometheus-stack-31.0.0    0.53.1
 ```
 
-**Create empty helm Chart**
-
- You can crete an empty helm chart then modify with your own docker images and configurations
-
-```bash
-helm create my-chart
-```
-
-**Generate Chart from local repo**
+**4. Generate Chart from local repo**
 
 - A helm chart can be pull from local repository. Here, you can make modifications on `values.yaml` file before installing the application or upgrade already existing applicaton.
 
@@ -271,12 +265,37 @@ This will generate `kube-prometheus-stack` with `template`, `values.yaml` etc. Y
 ```bash
 mv kube-prometheus-stack prometheus # This will rename kube-prometheus-stack folder to prometheus
 ```
-**Install local chart**
+**6. Install local chart**
 
 To install local chart, run;
 
 ```bash
 helm install prometheus ./prometheus -n monitoring 
+```
+**7. Generate YAML from helm chart**
+
+A YAML file can be generated from any helm chart once the arguments are passed currectly.
+
+- To generate a YAML file, run
+
+```bash
+heml template <app_name> ./chart_name/ --values=./chart_name/values.yaml
+```
+
+Eg
+
+> To generate a `yaml` from `prometheus` chart, run:
+ 
+```bash
+helm template prometheus ./prometheus/ --values=./prometheus/values.yaml > path/prometheus.yaml 
+```  
+ 
+**8. Create empty helm Chart**
+
+ You can crete an empty helm chart then modify with your own docker images and configurations
+
+```bash
+helm create my-chart
 ```
 
 </p>
