@@ -213,7 +213,8 @@ helm upgrade prometheus prometheus/kube-prometheus-stack # This will apply chang
 ```
 Note
 
-> namespace `monitoring` must exist
+> namespace `monitoring` must exist.
+ 
 > If you don't have it created already, run `kubectl create ns monitoring`
 
 **List all helm releases and revisions in the cluster**
