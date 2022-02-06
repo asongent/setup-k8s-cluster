@@ -249,7 +249,7 @@ helm ls -A
 
 ```bash
 NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                           APP VERSION
-prometheus      monitoring      2               2022-02-05 17:36:43.3369651 -0500 EST   deployed        kube-prometheus-stack-31.0.0    0.53.1
+prometheus      monitoring         1            2022-02-05 17:36:43.3369651 -0500 EST   deployed        kube-prometheus-stack-31.0.0    0.53.1
 ```
 
 **4. Generate Chart from local repo**
@@ -288,7 +288,7 @@ Eg
 ```bash
 helm template prometheus ./prometheus/ --values=./prometheus/values.yaml > path/prometheus.yaml 
 ```  
-
+- Navigate to path where `prometheus.yaml` file is saved and run `kubectl apply -f prometheus.yaml -n monitoring` to install prometheus.
 
 **8. Create empty helm Chart**
 
