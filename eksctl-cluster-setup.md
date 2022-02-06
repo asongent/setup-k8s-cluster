@@ -253,7 +253,7 @@ To install local chart, run;
 
 ```bash
 helm install prometheus ./prometheus -n monitoring 
-``
+```
 </p>
 </details>
 
