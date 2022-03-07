@@ -46,10 +46,10 @@ Default output format [None]:
 <details><summary>4). Create your cluster</summary>
 <p>
 
-- On `PowerSell`, enter the command below to create your cluster named `apple-cluster`,
+- On `PowerSell`, enter the command below to create your cluster named `dev-cluster`,
 ```bash
 eksctl create cluster \
---name apple-cluster \
+--name dev-cluster \
 --version 1.17 \
 --region us-west-2 \
 --nodegroup-name linux-nodes \
@@ -64,7 +64,7 @@ eksctl create cluster \
 --name dev-cluster \
 --version 1.21 \
 --zones us-west-2a,us-west-2b,us-west-2c \
---nodegroup-name linux-nodes \
+--nodegroup-name dev-ng \
 --node-type c4.4xlarge \
 --nodes 2
  ```
