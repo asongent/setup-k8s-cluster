@@ -61,15 +61,15 @@ eksctl create cluster \
  ```bash
  
 eksctl create cluster \
---name prod-cluster \
+--name dev-cluster \
 --version 1.21 \
 --zones us-west-2a,us-west-2b,us-west-2c \
 --nodegroup-name linux-nodes \
 --node-type c4.4xlarge \
 --nodes 2
  ```
-- Enter `aws eks --region us-west-2 describe-cluster --name apple-cluster --query cluster.status` to check the status of the cluster. If successfully created, you should see `"ALIVE"`
-- Enter `aws eks --region us-west-2 update-kubeconfig --name apple-cluster` to update and export kubernetes configuration file to your local.
+- Enter `aws eks --region us-west-2 describe-cluster --name dev-cluster --query cluster.status` to check the status of the cluster. If successfully created, you should see `"ALIVE"`
+- Enter `aws eks --region us-west-2 update-kubeconfig --name dev-cluster` to update and export kubernetes configuration file to your local.
 - `$ cat ~/.kube/config` to see kubernetes configuration file. You shold see something like this. 
 ```bash
 apiVersion: v1
