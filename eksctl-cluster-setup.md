@@ -300,6 +300,16 @@ helm create my-chart
 </p>
 </details>
 
+ 
+ sudo certbot certonly --manual -d *.fredgentech.com -d fredgentech.com --agree-tos \
+--manual-public-ip-logging-ok --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory \
+--email=your-email --rsa-key-size 4096
+
+
+sudo kubectl  create secret tls dev-sec-tls \
+--cert=path \
+--key=path \
+--namespace dev --dry-run=client -o yaml
 
 
 
