@@ -161,13 +161,13 @@ eksctl --region us-west-2 utils associate-iam-oidc-provider --cluster apple-clus
 ```
 **To create an IAM OIDC identity provider for your cluster with the AWS Management Console**
 
-- Open the Amazon EKS console (here)[https://console.aws.amazon.com/eks/home#/clusters].
+- Open the Amazon EKS console [here](https://console.aws.amazon.com/eks/home#/clusters).
 
 - Select the name of your cluster and then select the **Configuration** tab.
 
 - In the **Details** section, note the value of the **OpenID Connect provider URL**.
 
-- Open the IAM console (here)[https://console.aws.amazon.com/iam/].
+- Open the IAM console [here](https://console.aws.amazon.com/iam/).
 
 - In the navigation panel, choose Identity Providers. If a Provider is listed that matches the URL for your cluster, then you already have a provider for your cluster. If a provider isn't listed that matches the URL for your cluster, then you must create one.
 
